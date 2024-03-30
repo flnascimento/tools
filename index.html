@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .container {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 24px;
+      transition: color 0.3s ease;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    button {
+      border: none;
+      outline: none;
+      background: #007bff;
+      color: #fff;
+      font-size: 14px;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    button .symbol {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .content-container {
+      margin-top: 50px;
+    }
+
+    .content {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 20px;
+      background-color: #fff;
+    }
+
+    @media only screen and (min-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Homepage</h1>
+    <div class="buttons">
+      <button onclick="showContent('https://flnascimento.github.io/calculadora-densidade-inSitu/', 'Calculadora D. InSitu')">
+        <span class="symbol">➕</span>
+        Calculadora D. InSitu
+      </button>
+      <button onclick="showContent('https://flnascimento.github.io/KML/', 'Gerador de KML')">
+        <span class="symbol">🗺️</span>
+        Gerador de KML
+      </button>
+      <button onclick="showContent('https://flnascimento.github.io/Matriz/', 'Matriz de Quadrados')">
+        <span class="symbol">⬜</span>
+        Matriz de Quadrados
+      </button>
+      <button onclick="showContent('https://flnascimento.github.io/numbersexcel/', 'Repetição de Números para Excel')">
+        <span class="symbol">📊</span>
+        Repetição de Números para Excel
+      </button>
+    </div>
+    <div class="content-container">
+      <div class="content" id="displayContent">
+        Clique em um botão para ver o conteúdo.
+      </div>
+    </div>
+  </div>
+  <script>
+    function showContent(url, title) {
+      var contentContainer = document.getElementById('displayContent');
+      contentContainer.innerHTML = '<h2>' + title + '</h2><iframe src="' + url + '" style="width: 100%; height: 400px; border: none;"></iframe>';
+    }
+  </script>
+</body>
+</html>
